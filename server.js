@@ -15,8 +15,29 @@ app.get('/', (req, res) => {
     res.render('home', {layout: 'main'});
 });
 app.get('/corpus', (req, res) => {
-    // res.render('home', {layout: false});
     res.render('projects/corpus', {layout: 'main'});
+});
+app.get('/thesis', (req, res) => {
+    res.render('projects/thesis', {layout: 'main'});
+});
+app.get('/blackout2', (req, res) => {
+    res.render('projects/blackout2', {layout: 'main'});
+});
+app.get('/pg', (req, res) => {
+    res.render('projects/pg', {layout: 'main'});
+});
+app.get('/pfn', (req, res) => {
+    res.render('projects/pfn', {layout: 'main'});
+});
+app.get('/bedside-bartender', (req, res) => {
+    res.render('projects/bedside_bartender', {layout: 'main'});
+});
+app.get('/scale', (req, res) => {
+    res.render('projects/scale', {layout: 'main'});
+});
+
+app.get('/blog', (req, res) => {
+    res.redirect('https://samheckle.github.io/blog/')
 });
 
 app.listen(8000);

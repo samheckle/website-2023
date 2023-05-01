@@ -19,4 +19,4 @@ app.get('/corpus', (req, res) => {
     res.render('projects/corpus', {layout: 'main'});
 });
 
-app.listen(80);
+app.listen(8000);

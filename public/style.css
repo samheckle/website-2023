@@ -6,6 +6,7 @@ body {
   font-family: monospace;
   background-color: black;
   color: white;
+  overflow: clip;
 }
 
 nav {
@@ -39,13 +40,19 @@ a {
 }
 
 /* per page styling */
-.content{
+.content, .play{
   position: absolute;
   top: 0;
   left: calc(20% + 24px);
   width: calc(90% - (20% + 24px + 50px));
   padding-left: 50px;
-  overflow:auto;
+  overflow: auto;
+  height: 100%;
+}
+.play{
+  color: black;
+  max-height: 100%;
+  overflow: clip;
 }
 .content h4{
   font-size: 24px;
@@ -58,7 +65,11 @@ a {
   font-size: 13pt;
 }
 .content .iframe{
-  text-align: center;
+  /* text-align: center; */
+}
+.iframe > iframe {
+  width: 90%;
+  height: 500px;
 }
 .cover-images{
   margin-top: 10px;
@@ -70,6 +81,7 @@ a {
   border-bottom: 2px solid yellow;
   width: 90%;
   margin-bottom: 10px;
+  justify-content: space-between;
 }
 .cover-images img{
   max-width: calc(100%/3 - 10px);
@@ -81,8 +93,13 @@ a {
 .cover-images > .two-image-row{
   max-width: calc(100%/2 - 10px);
 }
-.single-image-row{
-  min-width: 100%;
+.image-container{
+  width: 100%;
+  height: 100%;
+}
+.image-container > .full-image-row{
+  width: 100%;
+  max-width: 100%;
 }
 
 @media (min-width: 320px) {

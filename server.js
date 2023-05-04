@@ -24,7 +24,7 @@ app.get('/thesis', (req, res) => {
     res.render('projects/thesis', {layout: 'main'});
 });
 app.get('/blackout2', (req, res) => {
-    res.render('projects/blackout2', {layout: 'main'});
+    // res.render('projects/blackout2', {layout: 'main'});
 });
 app.get('/linear-reprise', (req, res) => {
     res.render('projects/linear_reprise', {layout: 'main'});
@@ -46,6 +46,9 @@ app.get('/spectulative-ritual-1', (req, res) => {
 });
 app.get('/pinwheel', (req, res) => {
     res.render('projects/pinwheel', {layout: 'main'});
+});
+app.get('/resume', (req, res) => {
+    res.render('about/resume', {layout: 'main'});
 });
 
 app.get('/blog', (req, res) => {

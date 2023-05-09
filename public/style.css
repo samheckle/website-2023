@@ -55,21 +55,18 @@ a {
   max-height: 90%;
   overflow: clip;
   display: block;
-  border-bottom: 2px solid yellow;
+  /* border-top: 2px solid yellow; */
 }
 .content h4 {
   font-size: 24px;
   margin-bottom: 5px;
+  
 }
 .content a {
   margin-bottom: 10px;
   background-color: yellow;
   color: black;
   font-size: 13pt;
-}
-.iframe > iframe {
-  width: 90%;
-  height: 500px;
 }
 .cover-images {
   margin-top: 10px;
@@ -83,12 +80,64 @@ a {
   margin-bottom: 10px;
   justify-content: space-between;
 }
+.carousel-content{
+  border-bottom: 2px solid yellow;
+}
+.carousel{
+  max-height: 600px;
+  min-height: 500px;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  gap: 10px;
+  overflow-x: scroll;
+  object-fit: cover;
+  scroll-snap-type: x mandatory;
+
+  padding-bottom: 10px;
+  /* border-bottom: 2px solid yellow; */
+}
+.carousel-center{
+  justify-content: center;
+}
+.carousel > .carousel-item{
+  min-height: 400px;
+  min-width: 60%;
+  object-fit:contain;
+
+  scroll-snap-align: center;
+}
+.carousel > .scale{
+  min-height: 400px;
+  min-width: 60%;
+  object-fit: cover;
+
+  scroll-snap-align: center;
+}
+
+.carousel-item.vertical {
+  min-height: 400px;
+  max-height: 500px;
+  min-width: auto;
+}
+.adjust--image{ 
+  max-height: 300px;
+}
+
+.scroll-btns{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 24pt;
+}
+
+.iframe > iframe {
+  min-width: 300px;
+  height: 500px;
+}
 .cover-images img {
   max-width: calc(100% / 3 - 10px);
   object-fit: cover;
-}
-.cover-images .scale{
-  height: 90%;
 }
 .pg > img {
   max-width: calc(100% / 2 - 10px);
@@ -114,14 +163,23 @@ a {
   max-width: 100%;
 }
 .image-container .valentine{
-  max-height: 600px;
-  object-fit:scale-down;
+  max-height: 500px;
+  object-fit:contain;
 }
 .footer{
-  width: 90%;
+  /* width: 90%; */
   font-style:italic;
   display: flex;
   justify-content: space-between;
+  border-top: 2px solid yellow;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+.footer > .blog > a {
+  font-size: 12pt;
+}
+.footer.full{
+  width: 90%;
 }
 /* specific to blackout */
 #blackout2 > #content{

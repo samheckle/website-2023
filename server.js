@@ -47,12 +47,18 @@ app.get('/spectulative-ritual-1', (req, res) => {
 app.get('/pinwheel', (req, res) => {
     res.render('projects/pinwheel', {layout: 'main'});
 });
+app.get('/reaction', (req, res) => {
+    res.render('projects/reaction', {layout: 'main'});
+});
 app.get('/resume', (req, res) => {
     res.render('about/resume', {layout: 'main'});
 });
 
 app.get('/blog', (req, res) => {
     res.redirect('https://samheckle.github.io/blog/')
+});
+app.get('/hosted', (req, res) => {
+    res.redirect('samheckle.github.io/hosted/')
 });
 
 app.listen(8000);

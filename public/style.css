@@ -50,6 +50,10 @@ a {
   overflow: auto;
   height: 100%;
 }
+.content.sketch{
+  width: 80%;
+  padding-left: 0;
+}
 .play {
   color: black;
   max-height: 90%;

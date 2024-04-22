@@ -12,7 +12,8 @@ app.use(express.static('public'))
 
 app.get('/', (req, res) => {
     // res.render('home', {layout: false});
-    res.render('home', {layout: 'main'});
+    // res.render('home', {layout: 'main'});
+    res.redirect('/bio')
 });
 app.get('/corpus', (req, res) => {
     res.render('projects/corpus', {layout: 'main'});

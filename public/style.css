@@ -213,6 +213,27 @@ a {
   background-color: white;
 }
 
+.text{
+  padding: 10px;
+  border-top: 2px solid yellow;
+  border-bottom: 2px solid yellow;
+
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.text .prof-pic{
+  display: flex;
+  flex-direction: column;
+  min-width: 212px;
+  flex-shrink: 0;
+}
+
+.text a{
+  font-size: 13px;
+}
+
 @media (min-width: 320px) {
 }
 

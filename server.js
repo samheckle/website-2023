@@ -51,6 +51,21 @@ app.get('/pinwheel', (req, res) => {
 app.get('/reaction', (req, res) => {
     res.render('projects/reaction', {layout: 'main'});
 });
+
+// engine().registerHelper('filter-sem', (v)=>{
+//     if(v == ){
+
+//     }
+// })
+
+app.get('/classes', (req, res) => {
+    let classes = {
+        spring24: [{name: "net-media", url: "https://github.com/samheckle/networked-media-sp-24"}, {name: "exp-coding"}, "capstone"],
+        fall23: ["icm", "creativeml", "exp-coding"],
+        spring23: ["net-media", "blursed"]
+    }
+    res.render('classes', {layout: 'main', classes: classes});
+});
 app.get('/resume', (req, res) => {
     res.render('about/resume', {layout: 'main'});
 });
@@ -65,4 +80,6 @@ app.get('/hosted', (req, res) => {
     res.redirect('samheckle.github.io/hosted/')
 });
 
-app.listen(8000);
+app.listen(8000, ()=>{
+    console.log('http://localhost:8000')
+});

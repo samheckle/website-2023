@@ -53,6 +53,7 @@ a {
 .content.sketch{
   width: 80%;
   padding-left: 0;
+  overflow-x: hidden;
 }
 .play {
   color: black;

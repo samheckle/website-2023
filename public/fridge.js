@@ -4,41 +4,57 @@ window.onload = () => {
 
 function fridge() {
   const s = (sketch) => {
+    // size of containing element
     let width = document.getElementById("canvas").parentElement.clientWidth;
     let height = document.getElementById("canvas").parentElement.clientHeight;
-    let imgs = [];
-    let imgPixels = [];
-    let load = false;
-    sketch.preload = () => {
-      imgs.push(sketch.loadGif("fridge-assets/1.gif"));
-    };
+
+    // single rand vid
+    let randV
+    // instance of glitch
+    let glitch = []
+
     sketch.setup = () => {
-      //elem.parentElement.clientWidth
       sketch.createCanvas(width, height);
       sketch.background(0);
-      if (imgs[0].loaded()) {
-        console.log('load')
-      imgPixels.push(imgs[0].get(0,0,width/2,height/2))
-      }
-      // sketch.imggettest = sketch.imgtest.get(0,0,width/2,height/2)
-      // console.log('te')
-      // sketch.image(imgs[0], 0,0,width,height)
 
-      // sketch.image(imgPixels[0], 0,0,width,height)
-      // sketch.image(sketch.imggettest, 0,0,width,height)
+      let v = Math.floor(sketch.random(2, 43))
+      if(v < 10){
+        v = "0" + v
+      }
+      randV = sketch.createVideo("fridge-assets/fridge_Sub_" + v + ".00.mp4", () => {
+        randV.hide();
+        randV.volume(0);
+        randV.loop();
+        randV.autoplay(true);
+        randV.size(width, height)
+      })
+
+      for(let i = 0; i < 9; i++){
+        glitch.push(new Glitch(sketch))
+        glitch[i].errors(false);
+        glitch[i].debug(false);
+      }
     };
     sketch.draw = () => {
-      if (imgs[0].loaded()) {
-        if(!load){
-            // imgPixels.push(imgs[0].get(0,0,width/2,height/2))
-            load = true;
-            console.log(load)
-            imgs[0].loadPixels()
+      w = randV.width
+      h = randV.height
+
+      for(let col = 0; col < 3; col++){
+        for(let row = 0; row < 3; row++){
+          let index = row + (3 * col)
+          let cut = randV.get(w / 3 * row, h/3 * col, w/3, h/3)
+          cut.filter(sketch.GRAY)
+          if(index != 4){
+            glitch[index].resetBytes()
+            glitch[index].loadImage(cut)
+            glitch[index].randomBytes(2)
+            glitch[index].buildImage();
+            sketch.image(glitch[index].image, w/3*row, h/3 * col)
+          } else{
+            sketch.image(cut, w/3*row, h/3 * col)
+          }
         }
-        sketch.image(imgPixels, 0, 0, width, height);
-      }
-      // sketch.image(imgs[0], 0,0,width,height)
-      // imgs[0].play()
+      }  
     };
   };
   return new p5(s, "canvas");

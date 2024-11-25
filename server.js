@@ -12,8 +12,8 @@ app.use(express.static('public'))
 
 app.get('/', (req, res) => {
     // res.render('home', {layout: false});
-    // res.render('home', {layout: 'main'});
-    res.redirect('/bio')
+    res.render('home', {layout: 'main'});
+    // res.redirect('/bio')
 });
 app.get('/corpus', (req, res) => {
     res.render('projects/corpus', {layout: 'main'});
@@ -51,6 +51,9 @@ app.get('/pinwheel', (req, res) => {
 app.get('/reaction', (req, res) => {
     res.render('projects/reaction', {layout: 'main'});
 });
+app.get('/limerance', (req, res)=>{
+    res.render('projects/limerance', {layout: 'main'})
+})
 
 // engine().registerHelper('filter-sem', (v)=>{
 //     if(v == ){

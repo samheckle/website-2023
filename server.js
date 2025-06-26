@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
     res.render('home', {layout: 'main'});
     // res.redirect('/bio')
 });
-app.get('/corpus', (req, res) => {
+app.get('/forms', (req, res) => {
     res.render('projects/corpus', {layout: 'main'});
 });
 app.get('/valentine', (req, res) => {
@@ -54,7 +54,15 @@ app.get('/reaction', (req, res) => {
 app.get('/limerance', (req, res)=>{
     res.render('projects/limerance', {layout: 'main'})
 })
-
+app.get('/hngs', (req, res)=>{
+    res.render('projects/hngs', {layout: 'main'})
+})
+app.get('/cal', (req, res)=>{
+    res.render('projects/cal-red', {layout: 'main'})
+})
+app.get('/organs', (req, res)=>{
+    res.render('projects/organs', {layout: 'main'})
+})
 // engine().registerHelper('filter-sem', (v)=>{
 //     if(v == ){
 

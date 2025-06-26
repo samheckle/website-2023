@@ -277,6 +277,11 @@ a {
   justify-content: space-between;
 }
 
+.bio{
+  display: flex;
+  flex-direction: row;
+}
+
 .text .prof-pic{
   display: flex;
   flex-direction: column;

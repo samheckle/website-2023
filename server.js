@@ -83,6 +83,9 @@ app.get('/resume', (req, res) => {
 app.get('/bio', (req, res) => {
     res.render('about/bio', {layout: 'main'});
 });
+app.get('/biz-card', (req, res) => {
+    res.render('about/biz');
+});
 
 app.get('/blog', (req, res) => {
     res.redirect('https://samheckle.github.io/blog/')

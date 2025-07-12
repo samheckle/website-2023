@@ -1,0 +1,44 @@
+@media screen and (max-width: 600px) {
+    nav{
+        display: none;
+    }
+    .biz-card{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        justify-content: space-around;
+        height: 100%;
+        font-size: 16px;
+    }
+    h1{
+        padding: 3px 0px;
+    }
+    h3{
+        padding: 3px 0px;
+        border: 1px solid white;
+        box-shadow: none;
+        width: 80%;
+    }
+    ul{
+        padding: 3px 0px;
+        margin: 0;
+    }
+
+    h3, .email{
+        font-size: 20px;
+    }
+    .schools{
+        flex-direction: row;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+    .schools > ul {
+        width: 47%;
+    }
+    hr{
+        width: 80%;
+    }
+}
